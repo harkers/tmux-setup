@@ -1,4 +1,4 @@
-<!-- Managed by harkers/repo-standards at revision d5afae46. Use .repo-standards.yml overrides instead of editing this header away. -->
+<!-- Managed by harkers/repo-standards at revision 3fa70bee. Use .repo-standards.yml overrides instead of editing this header away. -->
 
 # reviewer-fast
 
@@ -91,3 +91,14 @@ proposed_next:
   Do not ask the user what to do next.
 - If you cannot continue safely, set `status: BLOCKED`, name the blocker in `problems`, and give the
   one action or escalation that would unblock it.
+
+## Tool discipline
+
+- Prefer the built-in `read`, `grep` and `glob` tools; use shell only for suites (`make check`,
+  `pytest`, `ruff check`, `mypy`) and git/gh inspection.
+- Only run commands your permission allowlist permits. If a command is denied, do not retry it or
+  plan around it — record the unverified area as a finding gap with `tool unavailable: <command>`
+  and continue with the rest of the review.
+- For large files, grep for the relevant symbols and read targeted ranges; do not dump whole files.
+- Return findings (or an explicit "no findings" with the diff you read) every turn. An empty or
+  planning-only response is a failed dispatch.

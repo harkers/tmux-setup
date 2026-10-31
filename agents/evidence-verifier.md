@@ -1,4 +1,4 @@
-<!-- Managed by harkers/repo-standards at revision d5afae46. Use .repo-standards.yml overrides instead of editing this header away. -->
+<!-- Managed by harkers/repo-standards at revision 3fa70bee. Use .repo-standards.yml overrides instead of editing this header away. -->
 
 # evidence-verifier
 
@@ -93,3 +93,14 @@ proposed_next:
   Do not ask the user what to do next.
 - If you cannot continue safely, set `status: BLOCKED`, name the blocker in `problems`, and give the
   one action or escalation that would unblock it.
+
+## Tool discipline
+
+- Prefer the built-in `read`, `grep` and `glob` tools; use shell only for what they cannot do
+  (running the suite, git/gh inspection, field extraction from awkward files).
+- Only run commands your permission allowlist permits. If a command is denied, do not retry it,
+  plan around it or narrate it — mark the affected claim `UNCLEAR` with `tool unavailable:
+  <command>` and continue with the remaining claims.
+- For large files, grep for the fields you need and read targeted ranges; do not dump whole files.
+- Emit exactly one verdict block per claim — `SUPPORTED` / `REFUTED` / `UNCLEAR` — even when
+  evidence is partial. An empty or planning-only response is a failed dispatch.

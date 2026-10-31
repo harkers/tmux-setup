@@ -1,4 +1,4 @@
-<!-- Managed by harkers/repo-standards at revision d5afae46. Use .repo-standards.yml overrides instead of editing this header away. -->
+<!-- Managed by harkers/repo-standards at revision 3fa70bee. Use .repo-standards.yml overrides instead of editing this header away. -->
 
 # Branch and Worktree Standard
 
@@ -166,6 +166,7 @@ After merge/closure and after confirming no unique work remains:
 ```bash
 git worktree remove ../<repo>-wt/issue-123-package-scaffold
 git worktree prune
+```
 
 Cleanup is checkable rather than a matter of remembering:
 
@@ -180,6 +181,5 @@ patches absent from the base ref and its tree is clean. Anything else — dirty,
 unmerged, detached, or missing from disk — is reported with the reason and left
 alone. The rule exists because a leftover worktree makes finished work look
 outstanding: agents have re-opened already-merged work after finding one.
-```
 
 Branch deletion follows repository policy and must not occur while a needed PR, recovery path or evidence reference depends on it.

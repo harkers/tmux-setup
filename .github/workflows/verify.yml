@@ -1,4 +1,4 @@
-# Managed by harkers/repo-standards at revision d5afae46. Use .repo-standards.yml overrides instead of editing this header away.
+# Managed by harkers/repo-standards at revision 3fa70bee. Use .repo-standards.yml overrides instead of editing this header away.
 # Reference verification workflow (template; not run from this repository).
 #
 # Standards: standards/build-assurance.md, standards/security-assurance.md.
@@ -23,7 +23,7 @@ on:
       profile:
         description: >-
           Baseline assurance profile (library|service|infrastructure|documentation).
-          Leave empty to use the profile declared in .repo-standards.yml.
+          Leave empty to use assurance.baseline from .repo-standards.yml.
         required: false
         default: ""
       secret_detection_tool:
@@ -77,20 +77,20 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
 
       - name: Resolve assurance profile
-        # Repository configuration wins over the default; a dispatch input wins
-        # over both. Fails closed when neither exists, instead of silently
-        # evaluating a baseline the repository never declared (rs#86).
+        # The repository's assurance.baseline is the default; a dispatch input wins.
+        # The top-level profile selects the repo-standards component bundle and
+        # MUST NOT be interpreted as an assurance baseline (rs#157). Fails closed
+        # when neither source provides a valid assurance baseline.
         env:
           DISPATCH_PROFILE: ${{ inputs.profile }}
         run: |
           set -euo pipefail
           profile="${DISPATCH_PROFILE}"
           if [ -z "$profile" ] && [ -f .repo-standards.yml ]; then
-            profile="$(sed -n 's/^profile:[[:space:]]*//p' .repo-standards.yml \
-              | head -n1 | tr -d '\"' | tr -d "'[:space:]")"
+            profile="$(awk '/^assurance:[[:space:]]*$/ { in_assurance=1; next } in_assurance && /^[^[:space:]]/ { exit } in_assurance && /^[[:space:]]+baseline:[[:space:]]*/ { sub(/^[[:space:]]+baseline:[[:space:]]*/, ""); gsub(/[\\"\x27[:space:]]/, ""); print; exit }' .repo-standards.yml)"
           fi
           if [ -z "$profile" ]; then
-            echo "::error::no assurance profile: set \`profile:\` in .repo-standards.yml, or run workflow_dispatch with a profile input"
+            echo "::error::no assurance profile: set `assurance.baseline:` in .repo-standards.yml, or run workflow_dispatch with a profile input"
             echo "status=BLOCKED_TOOLING" >> "$GITHUB_STEP_SUMMARY"
             exit 1
           fi
@@ -137,7 +137,12 @@ jobs:
             "https://github.com/anchore/syft/releases/download/v1.54.0/syft_1.54.0_linux_amd64.tar.gz"
           tar -xzf /tmp/syft.tar.gz -C /usr/local/bin syft
           # semgrep 1.179.0 — pinned pip version (official PyPI package)
-          python3 -m pip install --disable-pip-version-check "semgrep==1.179.0"
+          # --break-system-packages: Debian/Ubuntu images mark the system Python
+          # externally managed (PEP 668) and ship distro-owned packages without RECORD
+          # files (e.g. PyJWT), so pip cannot uninstall them: --ignore-installed installs
+          # over them. PyYAML is pinned here because tools/ imports it and non-GitHub
+          # runner images do not ship it. The job container is disposable.
+          python3 -m pip install --disable-pip-version-check --break-system-packages --ignore-installed "semgrep==1.179.0" "PyYAML==6.0.2"
           # trivy v0.75.0 — pinned release download (official GitHub release).
           # Trivy backs the infrastructure_scan producer for the
           # `infrastructure` profile (rs#77).
@@ -272,7 +277,17 @@ jobs:
           set -euo pipefail
           python tools/validate_evidence.py evidence.json
 
+      # actions/upload-artifact v4 needs GitHub's artifact service; Forgejo/Gitea runners
+      # reject it. On other forges the packet is printed to the job log instead.
+      - name: Show evidence packet (non-GitHub forges)
+        if: ${{ github.server_url != 'https://github.com' }}
+        run: |
+          echo "::group::evidence.json"
+          cat evidence.json 2>/dev/null || echo "(no evidence.json)"
+          echo "::endgroup::"
+
       - name: Upload evidence and SBOM
+        if: ${{ github.server_url == 'https://github.com' }}
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: verification-evidence-${{ github.sha }}

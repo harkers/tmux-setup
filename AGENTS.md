@@ -1,4 +1,4 @@
-<!-- Managed by harkers/repo-standards at revision d5afae46. Use .repo-standards.yml overrides instead of editing this header away. -->
+<!-- Managed by harkers/repo-standards at revision 3fa70bee. Use .repo-standards.yml overrides instead of editing this header away. -->
 
 # Canonical Agent Operating Contract
 
@@ -37,6 +37,7 @@ Binding obligations, all defined in full by that document:
 
 ## Global rules
 
+- Canonical work management: before substantive work, resolve or create the WorkItem governed by the pinned canonical contract (`harkers/.github` `workitem/v4.1` + `workitem-gate/v8`) through the WorkHub CLI boundary; agents must not invent IDs, states or parallel TODO authorities, and must not vendor the contract locally — WorkHub refuses a local `workitem/` copy. See `harkers/.github#47`.
 - Do not implement directly from an architecture epic.
 - Every implementation change must belong to a bounded issue.
 - Every implementation issue must have an approved specification and implementation plan before coding begins.
