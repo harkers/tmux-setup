@@ -311,7 +311,7 @@ Per-folder `CLAUDE.md` files — one in each project folder under this repo and 
 
 ## Staying online while abroad
 
-The full plan — pre-flight checklist, Caddy + Cloudflare Access gateway, resilience layer, break-glass paths — lives in Notion: [Travel Mode — Deep Remote-Access Plan](https://www.notion.so/352bb54b0db681d18b54f9d0d835ed9e).
+The full plan — pre-flight checklist, Caddy + Cloudflare Access gateway, resilience layer, break-glass paths — lived in Notion (retired 2026-11-02; not migrated): [Travel Mode — Deep Remote-Access Plan (archived Notion page)](https://www.notion.so/352bb54b0db681d18b54f9d0d835ed9e).
 
 Pocket runbook (the bare minimum from a hotel):
 
@@ -326,7 +326,7 @@ ssh titan 'tmux a -t plex'   # or `tmux new -s plex` first time
 ssh -J zeus stu@192.168.10.80
 
 # 4. Browser-only? Hit any *.harker.systems URL → CF Access OTP via email
-#    (after Phase 1 of the Notion plan is deployed)
+#    (after Phase 1 of the travel-mode plan is deployed)
 ```
 
 Break-glass when the normal path is blocked:
@@ -339,4 +339,4 @@ Break-glass when the normal path is blocked:
 | Plex won't stream | check [Plex Pass relay status](https://app.plex.tv/desktop/#!/settings/server/<machine-id>/manage/remote-access) — falls back automatically |
 | iPhone lost | use Latitude bootstrap kit (Phase 0.3) — Tailscale auth-key pre-stored, recovery codes via Vaultwarden |
 
-Status of plan deployment is tracked in the Notion page's Section 6 status table.
+Status of plan deployment was tracked in the (archived) Notion page's Section 6 status table; Notion was retired on 2026-11-02, so current status belongs in the Harker Knowledge vault (note *Titan*).

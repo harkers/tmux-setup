@@ -50,4 +50,4 @@ curl -sI -H 'Host: radarr.harker.systems' http://127.0.0.1/
 
 - [`../cloudflare/CLAUDE.md`](../cloudflare/CLAUDE.md) — DNS + tunnel + Access management
 - [`../travel-mode/CLAUDE.md`](../travel-mode/CLAUDE.md) — bandwidth saver that runs alongside this
-- [Travel-Resilience Sprint Log 2026-04-30](https://www.notion.so/352bb54b0db681038fd2d217846fd510) — full deployment story
+- [Travel-Resilience Sprint Log 2026-04-30 (archived Notion page)](https://www.notion.so/352bb54b0db681038fd2d217846fd510) — full deployment story

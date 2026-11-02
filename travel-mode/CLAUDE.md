@@ -37,6 +37,6 @@ User-facing media (Plex, Posterizarr, Jellyfin, ErsatzTV), user-facing services 
 
 ## Cross-references
 
-- [Phase 3 of Travel Mode plan](https://www.notion.so/352bb54b0db681d18b54f9d0d835ed9e) — this is the implementation
+- [Phase 3 of Travel Mode plan (archived Notion page)](https://www.notion.so/352bb54b0db681d18b54f9d0d835ed9e) — this is the implementation
 - [`../caddy/CLAUDE.md`](../caddy/CLAUDE.md) and [`../cloudflare/CLAUDE.md`](../cloudflare/CLAUDE.md) — companion gateway + DNS layer
 - [memory: don't run kometa during user TV time](../../memory) — generalised here for remote streaming

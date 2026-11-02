@@ -43,5 +43,5 @@ python3 remove_service.py grafana         # cleanup
 ## Cross-references
 
 - [`../caddy/CLAUDE.md`](../caddy/CLAUDE.md) — what consumes the routes this creates
-- [Travel-Resilience Sprint Log 2026-04-30](https://www.notion.so/352bb54b0db681038fd2d217846fd510)
-- [Forge Cloudflare Zero Trust Setup](https://www.notion.so/338bb54b0db6814f8e30c209f90f3266) — the Clavis pattern this mirrors
+- [Travel-Resilience Sprint Log 2026-04-30 (archived Notion page)](https://www.notion.so/352bb54b0db681038fd2d217846fd510)
+- [Forge Cloudflare Zero Trust Setup (archived Notion page)](https://www.notion.so/338bb54b0db6814f8e30c209f90f3266) — the Clavis pattern this mirrors

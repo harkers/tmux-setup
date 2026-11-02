@@ -19,7 +19,7 @@ docker compose run --rm kometa python kometa.py --collections-only
 
 ## Memory captures
 - All pmm defaults re-enabled 2026-04-26
-- Trakt re-auth flow documented in Notion
+- Trakt re-auth flow was documented in Notion (retired 2026-11-02; not migrated, see the Harker Knowledge vault)
 - `asset_folders: false` to use single-folder asset layout
 - `imdb_search` migrated to `imdb_award` per upstream deprecation
 - `radarr_add_missing` interactions can produce poisoned ratingKeys via PlexNotify webhook
