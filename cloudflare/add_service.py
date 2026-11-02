@@ -22,7 +22,6 @@ import sys
 from cf_common import (
     CADDY_ORIGIN,
     DEFAULT_AUDTAGS,
-    HARKER_TUNNEL_ID,
     HARKER_ZONE_ID,
     TEAM_NAME,
     TUNNEL_CNAME,

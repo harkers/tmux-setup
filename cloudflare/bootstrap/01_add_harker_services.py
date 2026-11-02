@@ -6,11 +6,10 @@ Targets the harker.systems tunnel (8ba2b285...) — NOT titan-home.
 All routes terminate at titan:80 where Caddy will route by Host header.
 """
 import json
-import os
 import sys
 import time
-import urllib.request
 import urllib.error
+import urllib.request
 
 ENV_PATH = "/Users/stu/Projects/ordered-edge/.env.secrets"
 HARKER_ZONE_ID = "7753bd60f0d59784363e0c47d6ab32dc"
@@ -212,7 +211,7 @@ def main():
         sys.exit(1)
 
     # Summary
-    print(f"\n=== Summary ===")
+    print("\n=== Summary ===")
     print(f"  CNAMEs added:   {len(added_dns)}")
     print(f"  CNAMEs skipped: {len(skip_dns)}")
     print(f"  Ingress added:  {len(new_rules)}")
