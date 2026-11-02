@@ -6,8 +6,8 @@ Falls back to printing dashboard instructions if it can't.
 """
 import json
 import sys
-import urllib.request
 import urllib.error
+import urllib.request
 
 ENV_PATH = "/Users/stu/Projects/ordered-edge/.env.secrets"
 
