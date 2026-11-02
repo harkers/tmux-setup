@@ -26,7 +26,7 @@ If the file mixes multiple discrete jobs, prefer splitting it into one file per 
 
 ## Audit before travel
 
-Before flying, run `crontab -l` for both your user account and root, plus `ls /etc/cron.d/` — make sure nothing's been added by a one-shot script that you forgot about. The Phase 3 `travel-mode on` script in the [Notion plan](https://www.notion.so/352bb54b0db681d18b54f9d0d835ed9e) backs up the current crontab before pausing entries.
+Before flying, run `crontab -l` for both your user account and root, plus `ls /etc/cron.d/` — make sure nothing's been added by a one-shot script that you forgot about. The Phase 3 `travel-mode on` script in the [Notion plan (archived Notion page)](https://www.notion.so/352bb54b0db681d18b54f9d0d835ed9e) backs up the current crontab before pausing entries.
 
 ## Schedule philosophy
 

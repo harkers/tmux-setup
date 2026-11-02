@@ -1,6 +1,6 @@
 # Cloudflare management for harker.systems
 
-Idempotent Python scripts for managing the `harker.systems` Cloudflare zone, tunnel ingress, and Access apps. Built during the Phase 1 + 5.B rollout on 2026-04-30 — see [Notion plan](https://www.notion.so/352bb54b0db681d18b54f9d0d835ed9e).
+Idempotent Python scripts for managing the `harker.systems` Cloudflare zone, tunnel ingress, and Access apps. Built during the Phase 1 + 5.B rollout on 2026-04-30 — see [Notion plan (archived Notion page)](https://www.notion.so/352bb54b0db681d18b54f9d0d835ed9e).
 
 All scripts share `cf_common.py` (token loader, IDs, API helpers) and use the standard library only — no `pip install` step.
 
@@ -116,5 +116,5 @@ The scripts here don't currently need PATCH on existing Access apps. If you re-i
 ## Cross-references
 
 - [Caddyfile that consumes these rules](../caddy/Caddyfile)
-- [Travel-mode plan in Notion](https://www.notion.so/352bb54b0db681d18b54f9d0d835ed9e)
-- [Forge Zero Trust setup (the Clavis pattern this mirrors)](https://www.notion.so/338bb54b0db6814f8e30c209f90f3266)
+- [Travel-mode plan in Notion (archived Notion page)](https://www.notion.so/352bb54b0db681d18b54f9d0d835ed9e)
+- [Forge Zero Trust setup (the Clavis pattern this mirrors) (archived Notion page)](https://www.notion.so/338bb54b0db6814f8e30c209f90f3266)
