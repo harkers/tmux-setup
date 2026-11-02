@@ -103,7 +103,7 @@ mosh titan                   # opens a shell on titan, survives sleep/roaming
 mosh titan -- tmux a -t plex # attach to a tmux session via mosh
 ```
 
-mosh uses UDP 60000-61000 to titan's tailnet IP. If Tailscale itself is blocked (some hotels, some countries), fall back to `cloudflared access ssh` (Phase 5.B in the [Travel Mode plan](https://www.notion.so/352bb54b0db681d18b54f9d0d835ed9e)) — different layer, complementary.
+mosh uses UDP 60000-61000 to titan's tailnet IP. If Tailscale itself is blocked (some hotels, some countries), fall back to `cloudflared access ssh` (Phase 5.B in the [Travel Mode plan (archived Notion page)](https://www.notion.so/352bb54b0db681d18b54f9d0d835ed9e)) — different layer, complementary.
 
 ## One session per project
 

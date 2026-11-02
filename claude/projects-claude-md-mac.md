@@ -1,15 +1,15 @@
 # Mac ~/Projects map
 
-This file lives at `/Users/stu/Projects/CLAUDE.md` on the Mac. Claude Code walks up the directory tree finding `CLAUDE.md` files, so any session started in any subfolder gets this map plus the global `~/.claude/CLAUDE.md` (which has the Notion + brand + tooling preferences).
+This file lives at `/Users/stu/Projects/CLAUDE.md` on the Mac. Claude Code walks up the directory tree finding `CLAUDE.md` files, so any session started in any subfolder gets this map plus the global `~/.claude/CLAUDE.md` (which has the knowledge policy + brand + tooling preferences).
 
 ## Active projects
 
-| Folder | Purpose | tmux session | Notion |
+| Folder | Purpose | tmux session | Archived Notion page |
 |---|---|---|---|
-| `ordered-edge/` | OrderedEDGE audit practice — orderededge.co.uk site, Lens Auditor, M365 infra, ProPharma engagement | `ordered-edge` | [📦 OrderedEDGE — Products](https://www.notion.so/339bb54b0db6817ba41ef00d1e848e2d) |
-| `fidelex/` | Fidelex master brand — parent workspace for privacy-ops product strategy | `fidelex` | [📘 Fidelex — Products](https://www.notion.so/33fbb54b0db681079cdcc7d3b6938bff) |
+| `ordered-edge/` | OrderedEDGE audit practice — orderededge.co.uk site, Lens Auditor, M365 infra, ProPharma engagement | `ordered-edge` | [📦 OrderedEDGE — Products (archived Notion page)](https://www.notion.so/339bb54b0db6817ba41ef00d1e848e2d) |
+| `fidelex/` | Fidelex master brand — parent workspace for privacy-ops product strategy | `fidelex` | [📘 Fidelex — Products (archived Notion page)](https://www.notion.so/33fbb54b0db681079cdcc7d3b6938bff) |
 | `orderededge-agents/` | Lens Auditor + Python Agent SDK + FastMCP for cert-authenticated M365 audits | `orderededge-agents` | (linked from OE Platform) |
-| `py-plex/` | Homelab provisioning + OSINT intelligence platform (Proxmox CTs, Docker stacks, NordVPN gluetun) | `py-plex` | [🏗️ Platform & Infrastructure](https://www.notion.so/339bb54b0db6815fb5dbe05b12c40409) |
+| `py-plex/` | Homelab provisioning + OSINT intelligence platform (Proxmox CTs, Docker stacks, NordVPN gluetun) | `py-plex` | [🏗️ Platform & Infrastructure (archived Notion page)](https://www.notion.so/339bb54b0db6815fb5dbe05b12c40409) |
 | `tmux-setup/` | Homelab config repo (Caddy, Cloudflare scripts, tmux, VNC, travel-mode, Claude config). Origin of slash commands + status line. | — | (this repo) |
 
 ## Quick connect to titan
@@ -42,6 +42,6 @@ tmux a -t <project>      # caddy / cloudflare / plex / kometa / etc.
 
 ## Cross-references
 
-- Global rules + Notion workspace map: [`~/.claude/CLAUDE.md`](~/.claude/CLAUDE.md)
+- Global rules + knowledge policy (Harker Knowledge vault; Notion retired 2026-11-02): [`~/.claude/CLAUDE.md`](~/.claude/CLAUDE.md)
 - Homelab tooling repo: [tmux-setup](https://github.com/harkers/tmux-setup)
 - titan project map: `/home/stu/projects/CLAUDE.md` (visible after `mosh titan`)

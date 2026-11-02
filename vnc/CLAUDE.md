@@ -51,5 +51,5 @@ VNC is **tailnet-only** by design — no Cloudflare Tunnel, no CF Access. If Tai
 
 ## Cross-references
 
-- [Phase 4.3 GUI fallback in the Travel Mode plan](https://www.notion.so/352bb54b0db681d18b54f9d0d835ed9e)
+- [Phase 4.3 GUI fallback in the Travel Mode plan (archived Notion page)](https://www.notion.so/352bb54b0db681d18b54f9d0d835ed9e)
 - [`../tmux/CLAUDE.md`](../tmux/CLAUDE.md) — terminal-based alternative when VNC is unreachable

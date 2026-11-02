@@ -18,7 +18,7 @@ Caddy on titan (this directory)
   └─→ zeus services (192.168.10.x:*)
 ```
 
-This file documents the deploy. The full plan, threat model, sequencing, and break-glass paths live in Notion: [Travel Mode — Deep Remote-Access Plan](https://www.notion.so/352bb54b0db681d18b54f9d0d835ed9e).
+This file documents the deploy. The full plan, threat model, sequencing, and break-glass paths lived in Notion (retired 2026-11-02; not migrated): [Travel Mode — Deep Remote-Access Plan (archived Notion page)](https://www.notion.so/352bb54b0db681d18b54f9d0d835ed9e).
 
 ## Files
 
