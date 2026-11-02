@@ -8,8 +8,8 @@ audTag. Bypass services (no access block) are left untouched.
 """
 import json
 import sys
-import urllib.request
 import urllib.error
+import urllib.request
 
 ENV_PATH = "/Users/stu/Projects/ordered-edge/.env.secrets"
 TUNNEL_ID = "8ba2b285-f8c1-464b-914e-f758c48d9e04"

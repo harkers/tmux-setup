@@ -10,9 +10,8 @@ SSH over HTTPS via Cloudflare. Adds:
 After this, from any machine: cloudflared access ssh --hostname ssh.harker.systems
 """
 import json
-import sys
-import urllib.request
 import urllib.error
+import urllib.request
 
 ENV_PATH = "/Users/stu/Projects/ordered-edge/.env.secrets"
 HARKER_ZONE_ID = "7753bd60f0d59784363e0c47d6ab32dc"
@@ -54,7 +53,7 @@ def add_cname(token):
     # check if already exists
     r = cf("GET", f"{url}?name=ssh.harker.systems", token)
     if r.get("result"):
-        print(f"  ssh.harker.systems already exists, skipping CNAME")
+        print("  ssh.harker.systems already exists, skipping CNAME")
         return
     body = {
         "type": "CNAME",
